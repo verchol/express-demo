@@ -13,5 +13,9 @@
     "jade": "~1.11.0",
     "morgan": "~1.6.1",
     "serve-favicon": "~2.3.0"
-  }
+  },
+  "devDependencies": {
+    "mocha-lcov-reporter": "^1.0.0"
+  },
+  "scripts" : { "test" : "istanbul cover _mocha ./tests/" } 
 }
