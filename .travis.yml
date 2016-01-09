@@ -6,8 +6,7 @@ install:
   - npm install -g istanbul
   - npm install -g mocha
 script: npm test
-service_name: travis-pro
-repo_token: etiLDkKPs8KxI4pNMigsPz4ZEEUoTtSSL
+
 
 #services:
 #  - mongodb
