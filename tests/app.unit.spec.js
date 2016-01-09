@@ -35,17 +35,15 @@ describe('app unit test', function(){
    });
  });
 
-   it('ping server', function(done){
-     server.on('error', function(err){done(err);});
+   it('negative test', function(done){
+     server.on('error', function(err){done();});
      server.on('listening', onListening);
      request('http://127.0.0.1:3000/nothing', function (error, response, body) {
-       console.log('recieved response');
-       if (error)
-       return done();
+       console.log('recieved response' + error);
        console.log(JSON.stringify(arguments));
-       if (!error) {
-         done('expecting error');
-       }
-    });
+       if (response.statusCode == 200){
+         return done(response);
+    }
+  });
 });
 });
