@@ -33,5 +33,18 @@ describe('app unit test', function(){
           done(error);
       }
    });
+
+   it('ping server', function(done){
+     server.on('error', function(err){done(err);});
+     server.on('listening', onListening);
+     request('http://127.0.0.1:3000/nothing', function (error, response, body) {
+       console.log('recieved response');
+       if (error)
+       return done();
+       console.log(JSON.stringify(arguments));
+       if (!error) {
+         done('expecting error');
+       }
+    });
 });
 });
