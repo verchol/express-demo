@@ -3,6 +3,8 @@ node_js:
   - "4.2.2"
 install:
   - npm install
+  - npm install -g istanbul
+  - npm install -g mocha
 script: npm test
 
 
