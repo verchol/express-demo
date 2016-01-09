@@ -33,6 +33,7 @@ describe('app unit test', function(){
           done(error);
       }
    });
+ });
 
    it('ping server', function(done){
      server.on('error', function(err){done(err);});
