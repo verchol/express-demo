@@ -1,3 +1,3 @@
 # express-demo
-https://travis-ci.org/verchol/express-demo.svg
+[![Build Status](https://travis-ci.org/verchol/express-demo.svg)](https://travis-ci.org/verchol/express-demo)
 # test
