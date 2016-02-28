@@ -1,6 +1,6 @@
 var mognoose = require('mongoose');
 describe('test mongo', function(){
-  var DB = process.env.DB  || 'mongodb://mongo/local';
+  var DB = process.env.DB  || 'mongodb://mongo:27017/local';
 
   it('connect', function(done){
     var mongoose = require('mongoose');
