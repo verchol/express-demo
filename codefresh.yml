@@ -9,7 +9,7 @@ steps:
     tag: latest
 
   notify:
-    image:tutum/curl:latest
+    image: tutum/curl:latest
     command :
        - echo works
     description: codefresh example
