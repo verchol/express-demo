@@ -1,15 +1,15 @@
-version: '1.0'
+  version: '1.0'
 
-steps:
-  build-prj:
-    type: build
-    description: codefresh example
-    image-name: codefreshexamples/socketio
-    dockerfile: Dockerfile
-    tag: latest
+  steps:
+    build-prj:
+      type: build
+      description: codefresh example
+      image-name: codefreshexamples/socketio
+      dockerfile: Dockerfile
+      tag: latest
 
-  notify:
-    image: tutum/curl:latest
-    command :
-       - echo works
-    description: codefresh example
+    notify:
+      image: tutum/curl:latest
+      command:
+         - ls
+      description: codefresh example
