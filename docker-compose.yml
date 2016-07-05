@@ -1,0 +1,12 @@
+version: '2'
+services:
+  app:
+    image : codefreshio/express:static
+    environment:
+      - externalPath=/dist
+    ports:
+     - 3000
+    volumes_from :
+     - dist
+  dist :
+    image : codefreshio/angular-image:master

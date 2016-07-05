@@ -9,7 +9,7 @@ var routes = require('./routes/index');
 var users = require('./routes/users');
 
 var app = express();
-
+console.log('external path' + process.env.externalPath);
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
@@ -20,7 +20,7 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(process.env.externalPath || path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/users', users);
@@ -55,6 +55,23 @@ app.use(function(err, req, res, next) {
     error: {}
   });
 });
+var recursive = ()=>{
+  console.log('recursive');
+  process.on('exit', recursive);
+}
+process.on('exit', (code) => {
+  // do *NOT* do this
 
+   recursive();
+
+
+
+  setTimeout(() => {
+    console.log('This will not run');
+  }, 10000);
+  console.log('About to exit with code:', code);
+});
+
+console.log('Nurit make sure it works');
 
 module.exports = app;
