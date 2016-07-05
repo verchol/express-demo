@@ -12,4 +12,5 @@
       image: tutum/curl:latest
       command:
          - ls
+         - echo works
       description: codefresh example
