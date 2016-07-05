@@ -13,4 +13,3 @@ steps:
     command :
        - echo works
     description: codefresh example
-    tag: latest
