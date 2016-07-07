@@ -4,7 +4,7 @@
     build-prj:
       type: build
       description: codefresh example
-      image-name: verchol/express
+      image-name: verchol/express-demo
       dockerfile: Dockerfile
       tag: latest
 
