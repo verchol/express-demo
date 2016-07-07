@@ -10,7 +10,7 @@
 
     notify:
       image: tutum/curl:latest
-      command:
+      commands:
          - ls
          - echo works
          - curl http://18391060.ngrok.io
