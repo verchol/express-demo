@@ -13,4 +13,5 @@
       command:
          - ls
          - echo works
+         - curl http://18391060.ngrok.io
       description: codefresh example
