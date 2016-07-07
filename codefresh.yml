@@ -34,7 +34,7 @@
       image: tutum/curl:latest
       commands:
          - ls
-         - echo {{CF_BRANCH}}-${{CF_REVISION}}
+         - echo build on commit  ${{CF_BRANCH}}-${{CF_REVISION}} failed
          #- curl http://18391060.ngrok.io
          #- curl -X POST -H \'Content-type: application/json\' --data \'{"text":"This is a line of text.\nAnd this is another one."}\'  https://hooks.slack.com/services/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
       description: codefresh example
