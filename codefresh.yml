@@ -1,6 +1,8 @@
   version: '1.0'
 #https://hooks.slack.com/services/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
   steps:
+
+
     build-prj:
       type: build
       description: codefresh example
@@ -8,19 +10,22 @@
       dockerfile: Dockerfile
       tag: latest
 
+    pushtoregistry:
+      image: tutum/curl:latest
+      commands:
+        - curl canhazip.com
+        - echo push to registry
+            #- curl http://18391060.ngrok.io
+           # - curl -X POST -H \'Content-type: application/json\' --data \'{"text":"This is a line of text.\nAnd this is another one."}\'  https://hooks.slack.com/services/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
+      description: codefresh example  
+
+
     #push-dockerhub:
      #type: push
      #candidate: ${{build-prj}}
      #tag: awesomeness
 
-    pushtoregistry:
-      image: tutum/curl:latest
-      commands:
-         - curl canhazip.com
-         - echo push to registry
-         #- curl http://18391060.ngrok.io
-        # - curl -X POST -H \'Content-type: application/json\' --data \'{"text":"This is a line of text.\nAnd this is another one."}\'  https://hooks.slack.com/services/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
-      description: codefresh example
+
     integration tests:
       image: ubuntu
       commands:
