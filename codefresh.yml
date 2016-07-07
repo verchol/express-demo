@@ -38,7 +38,7 @@
     notify:
       image: verchol/slack:latest
       environment:
-        MESSAGE=${{CF_BRANCH}}-${{CF_REVISION}}
+        MESSAGE=text
       commands:
          - ls
          - echo build on commit  ${{CF_BRANCH}}-${{CF_REVISION}} failed
