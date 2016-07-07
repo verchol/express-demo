@@ -43,4 +43,4 @@
           - echo $MESSAGE
           - sh /scripts/slack.sh
 
-     description: codefresh example
+      description: codefresh example
