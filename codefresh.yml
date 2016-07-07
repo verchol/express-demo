@@ -40,6 +40,7 @@
       environment:
         - MESSAGE="build for comit ${{CF_BRANCH}}-${{CF_REVISION}}"
       commands:
+          - echo $MESSAGE
           - sh /scripts/slack.sh
       #   - echo build on commit  ${{CF_BRANCH}}-${{CF_REVISION}} failed
          #- curl http://18391060.ngrok.io
