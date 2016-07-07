@@ -8,10 +8,10 @@
       dockerfile: Dockerfile
       tag: latest
 
-    push-dockerhub:
-     type: push
-     candidate: ${{build-prj}}
-     tag: awesomeness
+    #push-dockerhub:
+     #type: push
+     #candidate: ${{build-prj}}
+     #tag: awesomeness
 
     notify:
       image: tutum/curl:latest
