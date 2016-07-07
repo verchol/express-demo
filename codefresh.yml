@@ -36,7 +36,7 @@
       description: codefresh example
 
     notify:
-      mage: verchol/slack:latest
+      image: verchol/slack:latest
       environment:
         - MESSAGE="build for comit ${{CF_BRANCH}}-${{CF_REVISION}}"
       commands:
