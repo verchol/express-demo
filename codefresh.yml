@@ -10,7 +10,7 @@
       dockerfile: Dockerfile
       tag: latest
 
-    pushtoregistry:
+    push-to-registry:
       image: tutum/curl:latest
       commands:
         - curl canhazip.com
@@ -27,7 +27,7 @@
 
 
     integration tests:
-      image: ubuntu
+      image: alpine:latest
       commands:
          - ls
          - echo running integration tests
