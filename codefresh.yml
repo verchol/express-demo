@@ -13,11 +13,28 @@
      #candidate: ${{build-prj}}
      #tag: awesomeness
 
+   push to registry:
+    image: tutum/curl:latest
+    commands:
+       - ls
+       - echo push to registry
+       #- curl http://18391060.ngrok.io
+      # - curl -X POST -H \'Content-type: application/json\' --data \'{"text":"This is a line of text.\nAnd this is another one."}\'  https://hooks.slack.com/services/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
+    description: codefresh example
+    integration tests:
+      image: tutum/curl:latest
+      commands:
+         - ls
+         - echo running integration tests
+         #- curl http://18391060.ngrok.io
+        # - curl -X POST -H \'Content-type: application/json\' --data \'{"text":"This is a line of text.\nAnd this is another one."}\'  https://hooks.slack.com/services/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
+      description: codefresh example
+
     notify:
       image: tutum/curl:latest
       commands:
          - ls
-         - echo works
+         - echo {{CF_BRANCH}}-${{CF_REVISION}}
          #- curl http://18391060.ngrok.io
-         - curl -X POST -H \'Content-type: application/json\' --data \'{"text":"This is a line of text.\nAnd this is another one."}\'  https://hooks.slack.com/services/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
+         #- curl -X POST -H \'Content-type: application/json\' --data \'{"text":"This is a line of text.\nAnd this is another one."}\'  https://hooks.slack.com/services/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
       description: codefresh example
