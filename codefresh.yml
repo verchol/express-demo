@@ -22,7 +22,7 @@
         # - curl -X POST -H \'Content-type: application/json\' --data \'{"text":"This is a line of text.\nAnd this is another one."}\'  https://hooks.slack.com/services/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
       description: codefresh example
     integration tests:
-      image: tutum/curl:latest
+      image: ubuntu
       commands:
          - ls
          - echo running integration tests
@@ -31,10 +31,12 @@
       description: codefresh example
 
     notify:
-      image: tutum/curl:latest
+      image: verchol/slack:latest
+      environment:
+        MESSAGE=${{CF_BRANCH}}-${{CF_REVISION}}
       commands:
          - ls
          - echo build on commit  ${{CF_BRANCH}}-${{CF_REVISION}} failed
          #- curl http://18391060.ngrok.io
-         #- curl -X POST -H \'Content-type: application/json\' --data \'{"text":"This is a line of text.\nAnd this is another one."}\'  https://hooks.slack.com/services/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
+         - curl -X POST -H 'Content-type: application/json\' --data \'{"text":"This is a line of text.\nAnd this is another one."}\'  https://hooks.slack.com/services/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
       description: codefresh example

@@ -1,0 +1,7 @@
+FROM tutum/curl
+RUN mkdir /scripts
+#RUN echo curl -X POST -H \'Content-type: application/json\' --data $MESSAGE   $URL
+# https://hooks.slack.com/services/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 > /scripts/post.sh
+WORKDIR /scripts
+COPY . /scripts
+CMD ["sh" , "/scripts/slack.sh"]
