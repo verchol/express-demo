@@ -7,7 +7,7 @@ var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
-
+var index = 0;
 var app = express();
 console.log('external path' + process.env.externalPath);
 // view engine setup
@@ -17,6 +17,18 @@ app.set('view engine', 'jade');
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
+app.use((req, res, next)=>{
+  index++;
+  console.log(`----> ${index}`);
+  var dateFormat = require('dateformat');
+
+// Basic usage
+  var now = new Date();
+  var date = dateFormat(now , "dddd, mmmm dS, yyyy, h:MM:ss TT");
+  console.log(date);
+  console.log(req.originalUrl);
+  next();
+})
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());

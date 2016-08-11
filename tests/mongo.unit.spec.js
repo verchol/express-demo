@@ -2,7 +2,7 @@ var mognoose = require('mongoose');
 describe('test mongo', function(){
   var DB = process.env.DB  || 'mongodb://mongo:27017/local';
 
-  it('connect', function(done){
+  it.skip('connect', function(done){
     var mongoose = require('mongoose');
 
     mongoose.connect(DB);
